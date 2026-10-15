@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kiosk Check-in Tablet — JawaPos Awards 2026</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cockpit-theme kiosk-touch-mode">
+
+  <div class="ambient-glow glow-top-left" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom-center" aria-hidden="true"></div>
+
+  <!-- Kiosk Touch Header -->
+  <header class="glass-navbar kiosk-nav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="gold-poly-seal">JP</span>
+        <div>
+          <h1 class="brand-title">Registrasi JawaPos Awards 2026</h1>
+          <span class="brand-sub">Terminal Lobi Meja A · Grand Ballroom Hotel Surabaya</span>
+        </div>
+      </div>
+
+      <div class="kiosk-status-cluster">
+        <span class="system-online-badge"><i class="dot-live"></i> Sistem Online</span>
+        <button type="button" class="btn-touch-search" onclick="openKioskSearchModal()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span>Cari Nama Tamu</span>
+        </button>
+        <a href="index.html" class="btn-glass-secondary">
+          <span>&larr; Halaman Undangan</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Kiosk 2-Column Split: Left Scanner Hub, Right Verification Cockpit -->
+  <main class="kiosk-touch-grid">
+    
+    <!-- LEFT: Scanner Viewport -->
+    <section class="glass-card scanner-touch-card">
+      <div class="touch-scanner-viewport">
+        <div class="radar-scan-sweep"></div>
+        <div class="scanner-viewfinder-box">
+          <div class="box-edge tl"></div>
+          <div class="box-edge tr"></div>
+          <div class="box-edge bl"></div>
+          <div class="box-edge br"></div>
+          <div class="laser-beam"></div>
+        </div>
+        <div class="scanner-hud-tag">
+          <span class="rec-blink-dot"></span>
+          <span>Sensor Kamera Aktif · Pembacaan Otomatis</span>
+        </div>
+      </div>
+
+      <div class="scanner-touch-footer">
+        <p class="sc-guide-text">Arahkan barcode / QR Code tamu ke arah kamera.</p>
+        <div class="sc-tools-row">
+          <button type="button" class="btn-touch-tool" onclick="simulateScanSound()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            <span>Uji Bip</span>
+          </button>
+          <button type="button" class="btn-touch-tool" onclick="resetCheckinDemo()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+            <span>Reset Demo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: Verification & Delegasi Cockpit -->
+    <section class="glass-card verification-touch-card">
+      
+      <!-- Verified Banner -->
+      <div class="verified-banner-row">
+        <div class="verified-badge-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="verified-text-col">
+          <span class="verified-tag">CHECK-IN BERHASIL · STATUS OK</span>
+          <h2 class="verified-guest-title">Ibu Gubernur Jawa Timur</h2>
+        </div>
+        <div class="verified-clock" id="kioskClock">18:14:02 WIB</div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="kiosk-metrics-touch-grid">
+        <div class="metric-glass-box highlight-gold">
+          <span class="m-label">Nomor Meja</span>
+          <div class="m-val-wrap">
+            <span class="m-num">1</span>
+            <span class="m-tag-pill">VVIP FRONT ROW · 8K</span>
+          </div>
+          <span class="m-note">Meja VVIP, dampingi tamu kehormatan ke tempat duduk.</span>
+        </div>
+
+        <div class="metric-glass-box">
+          <span class="m-label">Kehadiran Rombongan</span>
+          <div class="m-val-wrap">
+            <span class="m-num text-emerald" id="presentCount">4</span>
+            <span class="m-total">/ 4 Tamu</span>
+          </div>
+          <span class="m-note" id="counterNote">Semua ditandai hadir</span>
+        </div>
+      </div>
+
+      <!-- Organizer Protocol Note -->
+      <div class="protocol-memo-touch">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <div>
+          <strong>Catatan Panitia:</strong>
+          <span>Datang bersama ajudan, jumlah pendamping bisa berubah di lokasi sesuai arahan protokol.</span>
+        </div>
+      </div>
+
+      <!-- Individual Seat Tiles -->
+      <div class="touch-seat-group">
+        <div class="seat-touch-header">
+          <span>Ketuk kartu tamu untuk mengubah status hadir / belum:</span>
+        </div>
+
+        <div class="seat-tiles-grid">
+          <button type="button" class="seat-touch-tile on" onclick="toggleKioskSeat(this, 1)">
+            <div class="tile-top">
+              <span class="st-name">Dra. Hj. Sulastri Hadiningrat</span>
+              <span class="st-badge">hadir</span>
+            </div>
+            <span class="st-role">Gubernur Jawa Timur · Tamu Utama</span>
+            <span class="st-code">Kursi 1-A</span>
+          </button>
+
+          <button type="button" class="seat-touch-tile on" onclick="toggleKioskSeat(this, 2)">
+            <div class="tile-top">
+              <span class="st-name">Siti Rahmawati</span>
+              <span class="st-badge">hadir</span>
+            </div>
+            <span class="st-role">Staf Protokol</span>
+            <span class="st-code">Kursi 1-B</span>
+          </button>
+
+          <button type="button" class="seat-touch-tile on" onclick="toggleKioskSeat(this, 3)">
+            <div class="tile-top">
+              <span class="st-name">Pendamping 3</span>
+              <span class="st-badge">hadir</span>
+            </div>
+            <span class="st-role">nama belum didata</span>
+            <span class="st-code">Kursi 1-C</span>
+          </button>
+
+          <button type="button" class="seat-touch-tile on" onclick="toggleKioskSeat(this, 4)">
+            <div class="tile-top">
+              <span class="st-name">Pendamping 4</span>
+              <span class="st-badge">hadir</span>
+            </div>
+            <span class="st-role">nama belum didata</span>
+            <span class="st-code">Kursi 1-D</span>
+          </button>
+        </div>
+
+        <!-- Action Bar -->
+        <div class="touch-batch-actions">
+          <button type="button" class="btn-touch-action primary" onclick="markAllPresent()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Tandai Sisanya Hadir</span>
+          </button>
+          
+          <button type="button" class="btn-touch-action secondary" onclick="printGuestBadge()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span>Cetak ID Badge Tamu</span>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Kiosk Search Modal -->
+  <div class="modal-backdrop hidden" id="kioskSearchModal" onclick="closeKioskSearchModal()">
+    <div class="modal-glass-dialog" onclick="event.stopPropagation()">
+      <div class="modal-glass-header">
+        <div>
+          <h3 class="modal-h3">Pencarian Tamu Registrasi</h3>
+          <span class="modal-subtext">Cari berdasarkan nama pejabat, instansi, atau nomor meja</span>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="closeKioskSearchModal()">✕</button>
+      </div>
+      <div class="modal-glass-body">
+        <div class="dir-search-wrap">
+          <input type="text" id="kioskSearchInput" class="glass-input-field" placeholder="Ketik nama atau instansi..." oninput="filterKioskSearch(this.value)">
+        </div>
+        <div class="kiosk-search-results" id="kioskSearchResults">
+          <div class="search-touch-item selected" onclick="selectSearchGuest('Ibu Gubernur Jawa Timur', 1)">
+            <div>
+              <strong>Ibu Gubernur Jawa Timur (Dra. Hj. Sulastri Hadiningrat)</strong>
+              <span>Pemerintah Provinsi Jawa Timur · 4 Delegasi</span>
+            </div>
+            <span class="tag-s-table">Meja 1 VVIP</span>
+          </div>
+          <div class="search-touch-item" onclick="selectSearchGuest('Polda Gresik', 1)">
+            <div>
+              <strong>Polda Gresik (Kapolres &amp; Staf)</strong>
+              <span>Kepolisian Daerah · 4 Delegasi</span>
+            </div>
+            <span class="tag-s-table">Meja 1 VVIP</span>
+          </div>
+          <div class="search-touch-item" onclick="selectSearchGuest('Direksi PT Semen Indonesia', 4)">
+            <div>
+              <strong>Direksi PT Semen Indonesia</strong>
+              <span>BUMN Industri · 8 Delegasi</span>
+            </div>
+            <span class="tag-s-table">Meja 4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="glass-toast hidden" id="cockpitToast">
+    <span id="toastContent">Aksi berhasil</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
