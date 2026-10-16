@@ -17,7 +17,7 @@ const BALLROOM_TABLES_DATA = {
     parties: [
       { name: "Ibu Gubernur Jawa Timur (Dra. Hj. Sulastri Hadiningrat)", role: "Tamu Utama", count: "1 orang", color: "gold" },
       { name: "Siti Rahmawati", role: "Staf Protokol Gubernur", count: "1 orang", color: "blue" },
-      { name: "Pendamping 3", role: "Ajudan / ADC Delegasi", count: "1 orang", color: "blue" },
+      { name: "Pendamping 3", role: "Delegasi", count: "1 orang", color: "blue" },
       { name: "Polda Gresik & Mitra Forkopimda", role: "Kapolres & Jajaran PJU", count: "5 orang", color: "gold" }
     ]
   },
