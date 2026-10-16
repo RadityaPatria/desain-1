@@ -775,7 +775,7 @@ function markAllPresent() {
   });
   updateKioskAttendanceSummary();
   simulateScanSound();
-  showToast("Semua kursi delegasi (4/4) ditandai hadir.");
+  showToast("Semua kursi delegasi (3/3) ditandai hadir.");
 }
 
 function printGuestBadge() {
