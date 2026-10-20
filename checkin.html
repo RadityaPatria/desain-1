@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=blackgold-v5">
+  <link rel="stylesheet" href="styles.css?v=blackgold-v6">
 </head>
 <body class="kiosk-page">
 
@@ -211,38 +211,109 @@
 
   </main>
 
-  <!-- Search Modal for Kiosk Operator -->
+    <!-- Search Modal for Kiosk Operator: Exact Match with User Design -->
   <div class="modal-backdrop hidden" id="searchModal" onclick="closeSearchModal(event)">
-    <div class="modal-dialog" onclick="event.stopPropagation()">
+    <div class="modal-dialog modal-manual-checkin" onclick="event.stopPropagation()">
       <div class="modal-header">
-        <h3 class="modal-title">Pencarian Nama Tamu Manual</h3>
-        <button type="button" class="modal-close-btn" onclick="closeSearchModal()">✕</button>
+        <h3 class="manual-checkin-title">Check-in manual</h3>
+        <button type="button" class="btn-close-text" onclick="closeSearchModal()">Tutup</button>
       </div>
-      <div class="modal-body">
+      <p class="manual-checkin-sub">Untuk tamu yang tidak bisa menunjukkan QR. Setiap check-in manual tercatat atas nama petugas yang login di laptop ini.</p>
+      
+      <div class="modal-body-custom">
         <div class="search-input-wrap">
           <input type="text" id="manualSearchInput" class="search-input" placeholder="Ketik nama tamu, instansi, atau nomor meja..." oninput="filterGuestTable()">
         </div>
+        
         <div class="search-results-list" id="searchResultsList">
-          <div class="search-result-item selected" onclick="selectSearchGuest('Gubernur &amp; 4 Pendamping', 1)">
-            <div class="s-info">
-              <strong>Gubernur &amp; 4 Pendamping (Dra. Hj. Sulastri Hadiningrat)</strong>
-              <span class="s-sub">Pemerintah Provinsi Jawa Timur · 3 Delegasi</span>
+          <!-- Exact screenshot items -->
+          <div class="search-result-item" onclick="selectSearchGuest('Bank Jatim', 11)">
+            <div class="item-left">
+              <strong class="item-name">Bank Jatim</strong>
+              <span class="item-sub">nama belum didata</span>
             </div>
-            <span class="s-table-tag">Meja 1 VVIP</span>
-          </div>
-          <div class="search-result-item" onclick="selectSearchGuest('Polda Gresik', 1)">
-            <div class="s-info">
-              <strong>Polda Gresik (Kapolres &amp; Staf)</strong>
-              <span class="s-sub">Kepolisian Daerah · 4 Delegasi</span>
+            <div class="item-right">
+              <span class="item-table">Meja 11</span>
+              <span class="item-status">3/5 hadir</span>
             </div>
-            <span class="s-table-tag">Meja 1 VVIP</span>
           </div>
+
+          <div class="search-result-item" onclick="selectSearchGuest('BI Jatim', 11)">
+            <div class="item-left">
+              <strong class="item-name">BI Jatim</strong>
+              <span class="item-sub">nama belum didata</span>
+            </div>
+            <div class="item-right">
+              <span class="item-table">Meja 11</span>
+              <span class="item-status">0/0 hadir</span>
+            </div>
+          </div>
+
+          <div class="search-result-item" onclick="selectSearchGuest('BPS RI dan Jatim', 10)">
+            <div class="item-left">
+              <strong class="item-name">BPS RI dan Jatim</strong>
+              <span class="item-sub">nama belum didata</span>
+            </div>
+            <div class="item-right">
+              <span class="item-table">Meja 10</span>
+              <span class="item-status">0/0 hadir</span>
+            </div>
+          </div>
+
+          <!-- Official VVIP Delegation -->
+          <div class="search-result-item" onclick="selectSearchGuest('Gubernur &amp; 4 Pendamping', 1)">
+            <div class="item-left">
+              <strong class="item-name">Gubernur &amp; 4 Pendamping</strong>
+              <span class="item-sub">Pemerintah Provinsi Jawa Timur</span>
+            </div>
+            <div class="item-right">
+              <span class="item-table">Meja 1 (VVIP)</span>
+              <span class="item-status">5/5 hadir</span>
+            </div>
+          </div>
+
+          <div class="search-result-item" onclick="selectSearchGuest('Polda Gresik &amp; Forkopimda', 1)">
+            <div class="item-left">
+              <strong class="item-name">Polda Gresik &amp; Forkopimda</strong>
+              <span class="item-sub">Kapolres &amp; Jajaran Mitra</span>
+            </div>
+            <div class="item-right">
+              <span class="item-table">Meja 1 (VVIP)</span>
+              <span class="item-status">3/3 hadir</span>
+            </div>
+          </div>
+
+          <div class="search-result-item" onclick="selectSearchGuest('Walikota Surabaya &amp; 4 Pendamping', 5)">
+            <div class="item-left">
+              <strong class="item-name">Walikota Surabaya &amp; 4 Pendamping</strong>
+              <span class="item-sub">Pemerintah Kota Surabaya</span>
+            </div>
+            <div class="item-right">
+              <span class="item-table">Meja 5</span>
+              <span class="item-status">5/5 hadir</span>
+            </div>
+          </div>
+
+          <div class="search-result-item" onclick="selectSearchGuest('Bupati Blitar &amp; 4 Pendamping', 34)">
+            <div class="item-left">
+              <strong class="item-name">Bupati Blitar &amp; 4 Pendamping</strong>
+              <span class="item-sub">Pemerintah Kabupaten Blitar</span>
+            </div>
+            <div class="item-right">
+              <span class="item-table">Meja 34</span>
+              <span class="item-status">5/5 hadir</span>
+            </div>
+          </div>
+
           <div class="search-result-item" onclick="selectSearchGuest('Direksi PT Semen Indonesia', 4)">
-            <div class="s-info">
-              <strong>Direksi PT Semen Indonesia</strong>
-              <span class="s-sub">BUMN Industri · 8 Delegasi</span>
+            <div class="item-left">
+              <strong class="item-name">Direksi PT Semen Indonesia</strong>
+              <span class="item-sub">BUMN Industri Semen</span>
             </div>
-            <span class="s-table-tag">Meja 4</span>
+            <div class="item-right">
+              <span class="item-table">Meja 4</span>
+              <span class="item-status">4/4 hadir</span>
+            </div>
           </div>
         </div>
       </div>

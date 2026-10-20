@@ -3069,3 +3069,216 @@ body.invitation-page {
 .metric-card.gold-border {
   border-color: rgba(223, 168, 55, 0.5) !important;
 }
+
+
+/* ==========================================================================
+   EXACT TYPOGRAPHY SYSTEM: MILEAST (DISPLAY) & AVERTA (UI/BODY)
+   ========================================================================== */
+
+/* Headings and Display Elements strictly in Mileast */
+h1, h2, h3, h4,
+.manual-checkin-title,
+.modal-title,
+.event-main-title,
+.guest-name-hero,
+.section-title,
+.kiosk-app-title,
+.result-guest-name,
+.detail-table-name,
+.metric-table-num,
+.seat-num {
+  font-family: 'Mileast', Georgia, serif !important;
+  font-weight: normal !important;
+}
+
+/* UI, Body, Buttons, and Forms strictly in Averta */
+body, p, span, a, input, textarea, select, button,
+.manual-checkin-sub,
+.btn-close-text,
+.search-input,
+.item-name,
+.item-sub,
+.item-table,
+.item-status,
+.s-sub,
+.guest-salutation,
+.guest-institution-badge,
+.event-tagline,
+.event-lead,
+.spec-pill,
+.badge-vvip,
+.invitation-code,
+.pass-label,
+.spec-label,
+.spec-value,
+.venue-title,
+.venue-address,
+.qr-caption,
+.btn-ghost-qr,
+.seat-label,
+.seat-title,
+.seat-desc,
+.btn-locate,
+.section-subtitle,
+.guest-name,
+.guest-role,
+.tag-status,
+.delegation-footer,
+.kiosk-mode-tag,
+.meta-label,
+.meta-val,
+.online-pill,
+.btn-kiosk-search,
+.inst-primary,
+.inst-secondary,
+.btn-subtle,
+.result-badge-label,
+.metric-label,
+.metric-tier-tag,
+.vip-escort-alert,
+.attendance-counter,
+.counter-sub,
+.memo-title,
+.memo-content,
+.seats-header-title,
+.seats-guide-hint,
+.seat-guest-name,
+.seat-badge-status,
+.seat-sub-role,
+.btn-kiosk-action,
+.kiosk-foot-notice {
+  font-family: 'Averta', system-ui, -apple-system, sans-serif !important;
+}
+
+/* Modal Check-In Manual: Pixel-perfect replica of official Wilwatikta design */
+.modal-manual-checkin {
+  max-width: 620px !important;
+  width: 92% !important;
+  background: #08090c !important;
+  border: 1px solid rgba(223, 168, 55, 0.35) !important;
+  border-radius: 12px !important;
+  padding: 28px 32px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9) !important;
+  color: #f8fafc !important;
+}
+
+.modal-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding-bottom: 4px !important;
+  border: none !important;
+}
+
+.manual-checkin-title {
+  font-family: 'Mileast', serif !important;
+  font-size: 34px !important;
+  color: #fceec7 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.1 !important;
+  margin: 0 !important;
+}
+
+.btn-close-text {
+  background: transparent !important;
+  border: none !important;
+  color: #cfbe97 !important;
+  font-family: 'Averta', sans-serif !important;
+  font-size: 15px !important;
+  cursor: pointer !important;
+  padding: 4px 6px !important;
+  transition: color 0.2s ease !important;
+}
+.btn-close-text:hover {
+  color: #ffffff !important;
+}
+
+.manual-checkin-sub {
+  color: #9c8e76 !important;
+  font-family: 'Averta', sans-serif !important;
+  font-size: 14.5px !important;
+  line-height: 1.55 !important;
+  margin: 8px 0 20px 0 !important;
+}
+
+.modal-body-custom .search-input-wrap {
+  margin-bottom: 12px !important;
+}
+
+.modal-body-custom .search-input {
+  width: 100% !important;
+  background: transparent !important;
+  border: 1px solid rgba(223, 168, 55, 0.4) !important;
+  border-radius: 8px !important;
+  padding: 13px 16px !important;
+  color: #ffffff !important;
+  font-family: 'Averta', sans-serif !important;
+  font-size: 15px !important;
+  outline: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.modal-body-custom .search-input:focus {
+  border-color: #dfa837 !important;
+  box-shadow: 0 0 0 2px rgba(223, 168, 55, 0.25) !important;
+}
+
+.modal-body-custom .search-results-list {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 8px !important;
+  max-height: 380px !important;
+  overflow-y: auto !important;
+}
+
+.search-result-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 16px 4px !important;
+  border-bottom: 1px solid rgba(223, 168, 55, 0.12) !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+}
+.search-result-item:hover {
+  background: rgba(223, 168, 55, 0.05) !important;
+}
+
+.search-result-item .item-left {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+}
+
+.search-result-item .item-name {
+  font-family: 'Averta', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+.search-result-item .item-sub {
+  font-family: 'Averta', sans-serif !important;
+  font-size: 13.5px !important;
+  color: #9c8e76 !important;
+}
+
+.search-result-item .item-right {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 3px !important;
+}
+
+.search-result-item .item-table {
+  font-family: 'Averta', sans-serif !important;
+  font-size: 15px !important;
+  color: #fceec7 !important;
+  font-weight: 500 !important;
+}
+
+.search-result-item .item-status {
+  font-family: 'Averta', sans-serif !important;
+  font-size: 13.5px !important;
+  color: #9c8e76 !important;
+}
