@@ -2975,3 +2975,65 @@ body.invitation-page {
   color: #f3c458 !important;
   border: 1px solid rgba(223, 168, 55, 0.45) !important;
 }
+
+/* ==========================================================================
+   TOP RIBBON BLACK & GOLD THEME
+   ========================================================================== */
+.ribbon-banner {
+  background: #06070a !important;
+  border-bottom: 1px solid rgba(223, 168, 55, 0.35) !important;
+  color: #94a3b8 !important;
+  font-family: var(--font-body) !important;
+  font-size: 12.5px !important;
+  padding: 9px 18px !important;
+  text-align: center !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+
+.ribbon-content {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.ribbon-gold-pill {
+  background: linear-gradient(135deg, var(--brass), var(--brass-light)) !important;
+  color: #07090c !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  padding: 3px 9px !important;
+  border-radius: 4px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 2px 8px rgba(223, 168, 55, 0.3) !important;
+}
+
+.ribbon-text {
+  color: #e2e8f0 !important;
+  font-weight: 500 !important;
+}
+
+.link-to-kiosk, .link-to-invitation {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: var(--brass-soft) !important;
+  background: rgba(223, 168, 55, 0.12) !important;
+  border: 1px solid rgba(223, 168, 55, 0.4) !important;
+  border-radius: 999px !important;
+  padding: 4px 14px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  margin-left: 8px !important;
+}
+
+.link-to-kiosk:hover, .link-to-invitation:hover {
+  background: linear-gradient(135deg, var(--brass), var(--brass-light)) !important;
+  color: #07090c !important;
+  border-color: var(--brass) !important;
+  box-shadow: 0 0 14px rgba(223, 168, 55, 0.45) !important;
+}
