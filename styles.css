@@ -2912,3 +2912,66 @@ body.invitation-page {
   background: var(--brass) !important;
   color: #07090c !important;
 }
+
+/* ==========================================================================
+   2-ITEM DELEGATION LIST & STRICT BLACK-GOLD OVERRIDES
+   ========================================================================== */
+#daftarHadir {
+  background: transparent !important;
+}
+
+.content-section {
+  background: transparent !important;
+}
+
+.delegation-card {
+  background: #0c0f16 !important;
+  border: 1px solid rgba(223, 168, 55, 0.3) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75) !important;
+}
+
+.guest-item {
+  border-bottom: 1px solid rgba(223, 168, 55, 0.12) !important;
+  padding: 18px 24px !important;
+}
+
+.guest-item.primary-vip {
+  background: rgba(223, 168, 55, 0.08) !important;
+  border-left: 4px solid var(--brass) !important;
+}
+
+.guest-item:not(.primary-vip) {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+.guest-avatar {
+  background: linear-gradient(135deg, #dfa837, #f3c458) !important;
+  color: #07090c !important;
+  font-family: var(--font-body) !important;
+  font-weight: 800 !important;
+}
+
+.guest-avatar.protocol {
+  background: #181d28 !important;
+  color: #fceec7 !important;
+  border: 1.5px solid rgba(223, 168, 55, 0.45) !important;
+}
+
+.guest-name {
+  font-family: var(--font-display) !important;
+  font-size: 21px !important;
+  color: #ffffff !important;
+  font-weight: 400 !important;
+}
+
+.guest-role {
+  font-family: var(--font-body) !important;
+  font-size: 13.5px !important;
+  color: #94a3b8 !important;
+}
+
+.tag-status.gold {
+  background: rgba(223, 168, 55, 0.15) !important;
+  color: #f3c458 !important;
+  border: 1px solid rgba(223, 168, 55, 0.45) !important;
+}
