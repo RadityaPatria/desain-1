@@ -1,6 +1,6 @@
-/**
- * JAWAPOS AWARDS 2026 — CLIENT ENGINE
- * Handles Dynamic SVG Ballroom Inspector (40 Tables · 8 Chairs),
+﻿/**
+ * JAWAPOS AWARDS 2026 â€” CLIENT ENGINE
+ * Handles Dynamic SVG Ballroom Inspector (40 Tables Â· 8 Chairs),
  * Real-time Guest Directory, Search & Highlight, and Web Audio API.
  */
 
@@ -15,10 +15,8 @@ const BALLROOM_TABLES_DATA = {
     isUserTable: true,
     note: "Posisi terdepan paling terhormat, menghadap langsung panggung utama dan catwalk tengah.",
     parties: [
-      { name: "Ibu Gubernur Jawa Timur (Dra. Hj. Sulastri Hadiningrat)", role: "Tamu Utama", count: "1 orang", color: "gold" },
-      { name: "Siti Rahmawati", role: "Staf Protokol Gubernur", count: "1 orang", color: "blue" },
-      { name: "Pendamping 3", role: "Delegasi", count: "1 orang", color: "blue" },
-      { name: "Polda Gresik & Mitra Forkopimda", role: "Kapolres & Jajaran PJU", count: "5 orang", color: "gold" }
+      { name: "Gubernur & 4 Pendamping", role: "Tamu Utama & Rombongan Resmi (5 Orang)", count: "5 orang", color: "gold" },
+      { name: "Polda Gresik & Mitra Forkopimda", role: "Kapolres & Jajaran PJU", count: "3 orang", color: "gold" }
     ]
   },
   2: {
@@ -572,8 +570,8 @@ function selectBallroomTable(tableId) {
   if (tagsEl) {
     const isUser = data.isUserTable;
     tagsEl.innerHTML = `
-      <span class="tag-badge-gold" style="${!isUser ? 'background: #254a52; border-color: #3b6fd4; color: #a5d3f2;' : ''}">
-        ${isUser ? '★ Meja Anda (VVIP)' : data.tier}
+      <span class="tag-badge-gold" style="${!isUser ? 'background: rgba(223, 168, 55, 0.08); border-color: rgba(223, 168, 55, 0.35); color: #dfa837;' : ''}">
+        ${isUser ? 'â˜… Meja Anda (VVIP)' : data.tier}
       </span>
       <span class="tag-badge-seat">${data.status}</span>
     `;
@@ -595,7 +593,7 @@ function selectBallroomTable(tableId) {
   }
 
   if (noteEl) {
-    noteEl.textContent = `${data.wing} · ${data.note}`;
+    noteEl.textContent = `${data.wing} Â· ${data.note}`;
   }
 }
 
@@ -758,7 +756,7 @@ function updateKioskAttendanceSummary() {
   if (noteEl) {
     if (activeCount === total) {
       noteEl.textContent = "Semua ditandai hadir";
-      noteEl.style.color = "var(--emerald-bright)";
+      noteEl.style.color = "var(--brass-light)";
     } else {
       noteEl.textContent = `${activeCount} dari ${total} orang terkonfirmasi hadir`;
       noteEl.style.color = "var(--brass-soft)";
@@ -901,3 +899,4 @@ updateLiveClock();
 document.addEventListener('DOMContentLoaded', () => {
   selectBallroomTable(1);
 });
+
