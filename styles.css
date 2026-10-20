@@ -53,7 +53,7 @@
   --deep: #08090c;
   --deep-darker: #040507;
   --deep-card: #0d1015;
-  --deep-hover: #161b24;
+  --deep-hover: #0d1017;
   --on-deep: #f8fafc;
   
   --brass: #dfa837;
@@ -63,7 +63,7 @@
 
   --surface: #ffffff;
   --surface-alt: #f7f9f7;
-  --ink: #14232b;
+  --ink: #06070a;
   --ink-secondary: #3b4e57;
   --mute: #94a3b8;
   --mute-dark: #64748b;
@@ -297,7 +297,7 @@ ul {
    ========================================================================== */
 
 .ribbon-banner {
-  background: linear-gradient(90deg, #13343a, #1a4249, #13343a);
+  background: linear-gradient(90deg, #080a0f, #12151e, #080a0f);
   border-bottom: 1px solid var(--line);
   color: #b9c6c2;
   font-size: 13px;
@@ -362,7 +362,7 @@ ul {
 /* Gala Hero Section */
 .gala-hero {
   position: relative;
-  background: radial-gradient(circle at 50% 20%, #173e44 0%, var(--deep) 75%);
+  background: radial-gradient(circle at 50% 20%, #10131c 0%, var(--deep) 75%);
   padding: 56px 24px 100px;
   text-align: center;
   overflow: hidden;
@@ -880,7 +880,7 @@ ul {
 }
 
 .guest-avatar.protocol {
-  background: #1e2530;
+  background: #10131b;
   color: var(--emerald-bright);
 }
 
@@ -1016,7 +1016,7 @@ ul {
 }
 
 .legend-dot.regular-table {
-  background: #181f2b;
+  background: #10131b;
   border: 1px solid rgba(223, 168, 55, 0.3);
 }
 
@@ -1087,7 +1087,7 @@ ul {
 .svg-viewport-wrapper {
   position: relative;
   width: 100%;
-  background: #071417;
+  background: #050608;
   padding: 18px;
   overflow-x: auto;
 }
@@ -1101,7 +1101,7 @@ ul {
 
 /* SVG Clean Table Design System (8 Chairs) */
 .table-surface-circle {
-  fill: #12151d;
+  fill: #090b10;
   stroke: rgba(223, 168, 55, 0.32);
   stroke-width: 1.6;
   transition: all 0.25s ease;
@@ -1118,7 +1118,7 @@ ul {
   font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 700;
-  fill: #d5e4df;
+  fill: #dfa837;
   pointer-events: none;
   user-select: none;
 }
@@ -1579,7 +1579,7 @@ ul {
 .camera-noise-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 50%, #15272c 0%, #050d0e 90%);
+  background: radial-gradient(circle at 50% 50%, #0f121a 0%, #050608 90%);
 }
 
 .camera-reticle {
@@ -2256,7 +2256,7 @@ ul {
   width: 38px;
   height: 38px;
   border-radius: 8px;
-  background: #11292e;
+  background: #0c0e14;
   border: 1px solid #2f5258;
   display: grid;
   place-items: center;
@@ -2722,18 +2722,18 @@ body.invitation-page {
 
 /* SVG TABLES DESIGN */
 .table-surface-circle {
-  fill: #141722 !important;
+  fill: #090b10 !important;
   stroke: rgba(223, 168, 55, 0.35) !important;
 }
 
 .chair-node {
-  fill: #475569 !important;
+  fill: #9a8a65 !important;
   stroke: #07090c !important;
 }
 
 .interactive-table:hover .table-surface-circle {
   stroke: #ffffff !important;
-  fill: #222838 !important;
+  fill: #1c1f2b !important;
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) !important;
 }
 
@@ -3281,4 +3281,250 @@ body, p, span, a, input, textarea, select, button,
   font-family: 'Averta', sans-serif !important;
   font-size: 13.5px !important;
   color: #9c8e76 !important;
+}
+
+
+/* ==========================================================================
+   BALLROOM MAP 100% PURE OBSIDIAN BLACK & IMPERIAL GOLD (ZERO TEAL)
+   ========================================================================== */
+.ballroom-map-card {
+  background: #08090d !important;
+  border: 1px solid rgba(223, 168, 55, 0.35) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.85) !important;
+}
+
+.svg-viewport-wrapper {
+  background: #050608 !important;
+  border: 1px solid rgba(223, 168, 55, 0.25) !important;
+  border-radius: 8px !important;
+}
+
+.table-surface-circle {
+  fill: #090b10 !important;
+  stroke: rgba(223, 168, 55, 0.4) !important;
+  stroke-width: 1.6 !important;
+}
+
+.chair-node {
+  fill: #9a8a65 !important;
+  stroke: #050608 !important;
+  stroke-width: 0.8 !important;
+}
+
+.table-label-text {
+  fill: #dfa837 !important;
+  font-family: 'Averta', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+}
+
+.interactive-table:hover .table-surface-circle {
+  stroke: #ffffff !important;
+  fill: #1c1f2b !important;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)) !important;
+}
+
+.interactive-table:hover .chair-node {
+  fill: #fceec7 !important;
+}
+
+.interactive-table.active .table-surface-circle {
+  fill: #221908 !important;
+  stroke: #fceec7 !important;
+  stroke-width: 3.2 !important;
+  filter: drop-shadow(0 0 14px rgba(223, 168, 55, 0.95)) !important;
+}
+
+.interactive-table.active .chair-node {
+  fill: #fceec7 !important;
+}
+
+.interactive-table.active .table-label-text {
+  fill: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+
+/* ==========================================================================
+   KIOSK FULLSCREEN LUXURY LAYOUT (EXACT REPLICA OF WILWATIKTA PRODUCTION)
+   ========================================================================== */
+body.kiosk-page {
+  background: url("assets/img/bg_polos_scan.png") no-repeat center center fixed !important;
+  background-size: cover !important;
+  background-color: #06070a !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-family: "Averta", sans-serif !important;
+  color: #f8fafc !important;
+  overflow-x: hidden !important;
+}
+
+.kiosk-top-bar {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  padding: 20px 32px !important;
+  gap: 18px !important;
+  z-index: 20 !important;
+}
+
+.kiosk-status-text {
+  font-family: "Averta", sans-serif !important;
+  font-size: 13.5px !important;
+  color: #cfbe97 !important;
+  opacity: 0.9 !important;
+}
+
+.kiosk-online-indicator {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: "Averta", sans-serif !important;
+  font-size: 13.5px !important;
+  color: #dfa837 !important;
+  font-weight: 600 !important;
+}
+
+.kiosk-online-indicator .online-dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #34d399 !important;
+  box-shadow: 0 0 8px #34d399 !important;
+}
+
+.btn-search-pill {
+  background: rgba(0, 0, 0, 0.45) !important;
+  border: 1px solid rgba(223, 168, 55, 0.6) !important;
+  border-radius: 999px !important;
+  padding: 6px 20px !important;
+  font-family: "Averta", sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #fceec7 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.btn-search-pill:hover {
+  background: rgba(223, 168, 55, 0.2) !important;
+  border-color: #dfa837 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Center Stage */
+.kiosk-main-stage {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  padding: 0 20px 40px !important;
+  text-align: center !important;
+  flex: 1 !important;
+}
+
+.kiosk-camera-box {
+  width: 380px !important;
+  height: 250px !important;
+  max-width: 90vw !important;
+  border: 2px solid rgba(255, 255, 255, 0.9) !important;
+  border-radius: 20px !important;
+  background: #000000 !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.85), 0 0 24px rgba(223, 168, 55, 0.15) !important;
+  overflow: hidden !important;
+  position: relative !important;
+  margin-bottom: 20px !important;
+}
+
+.kiosk-camera-box video, .kiosk-camera-box .camera-feed-mock {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.kiosk-camera-box .camera-reticle {
+  position: absolute !important;
+  inset: 16px !important;
+  pointer-events: none !important;
+}
+
+.kiosk-branding-group {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.kiosk-hero-logo {
+  height: 64px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  margin-bottom: 8px !important;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.6)) !important;
+}
+
+.scan-brand-source {
+  font-family: "Mileast", serif !important;
+  font-size: 22px !important;
+  font-style: italic !important;
+  color: #fceec7 !important;
+  letter-spacing: 0.04em !important;
+  margin-bottom: 2px !important;
+}
+
+.scan-grand-title {
+  font-family: "Mileast", serif !important;
+  font-size: clamp(38px, 6vw, 60px) !important;
+  line-height: 0.95 !important;
+  letter-spacing: 0.05em !important;
+  color: #ffffff !important;
+  background: linear-gradient(180deg, #ffffff 20%, #fceec7 55%, #dfa837 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 4px 30px rgba(223, 168, 55, 0.4) !important;
+  margin: 4px 0 8px !important;
+  font-weight: 800 !important;
+}
+
+.scan-welcome-title {
+  font-family: "Mileast", serif !important;
+  font-size: clamp(26px, 4vw, 36px) !important;
+  font-style: italic !important;
+  color: #fceec7 !important;
+  font-weight: 400 !important;
+  margin: 4px 0 10px !important;
+  letter-spacing: 0.02em !important;
+}
+
+.scan-instruction-text {
+  font-family: "Averta", sans-serif !important;
+  font-size: 15.5px !important;
+  color: #f1ebd8 !important;
+  letter-spacing: 0.04em !important;
+  opacity: 0.9 !important;
+  margin: 0 !important;
+}
+
+/* Result Verification Modal */
+.modal-checkin-result {
+  max-width: 600px !important;
+  width: 92% !important;
+  background: #090a0f !important;
+  border: 1px solid rgba(223, 168, 55, 0.45) !important;
+  border-radius: 16px !important;
+  padding: 30px 32px !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.95) !important;
+  color: #f8fafc !important;
+  text-align: left !important;
 }

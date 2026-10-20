@@ -847,10 +847,47 @@ function closeSearchModal(event) {
   if (modal) modal.classList.add('hidden');
 }
 
-function selectSearchGuest(name, tableNum) {
+// Function to handle guest selection from Manual Check-in modal
+function selectSearchGuest(name, tableNum, statusText) {
   closeSearchModal();
-  showToast(`Tamu terpilih: ${name} (Meja ${tableNum}). Memuat detail...`);
   simulateScanSound();
+
+  const resName = document.getElementById('resGuestName');
+  const resTable = document.getElementById('resTableNum');
+  const resPresent = document.getElementById('resPresentCount');
+  const resTotal = document.getElementById('resTotalCount');
+  const resEscort = document.getElementById('resEscortNote');
+  const resModal = document.getElementById('resultModal');
+
+  if (resName) resName.textContent = name;
+  if (resTable) resTable.textContent = tableNum;
+  
+  if (statusText && resPresent && resTotal) {
+    const parts = statusText.replace(' hadir', '').split('/');
+    if (parts.length === 2) {
+      resPresent.textContent = parts[0];
+      resTotal.textContent = '/' + parts[1];
+    }
+  }
+
+  if (resEscort) {
+    if (tableNum === 1) {
+      resEscort.textContent = "Meja VVIP Baris Terdepan, dampingi tamu ke tempat duduk.";
+    } else {
+      resEscort.textContent = `Arahkan tamu menuju Meja ${tableNum} di dalam ballroom.`;
+    }
+  }
+
+  if (resModal) {
+    resModal.classList.remove('hidden');
+  } else {
+    showToast(`Check-in berhasil: ${name} (Meja ${tableNum})`);
+  }
+}
+
+function closeResultModal() {
+  const resModal = document.getElementById('resultModal');
+  if (resModal) resModal.classList.add('hidden');
 }
 
 function filterGuestTable() {
